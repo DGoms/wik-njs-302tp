@@ -1,0 +1,19 @@
+{
+    "Album": [
+
+        { "id":1 , "name" : "aa"},
+        {"id": 2 , "name": "bb"},
+        { "id":3 , "name" : "aa"},
+        {"id": 4 , "name": "bb"}
+    ],
+    "Photo": [
+        {"id": "1", "name": "aa"},
+        {"id": "2", "name" : "ab"},
+        {"id": "3", "name" : "ac"}
+    ],
+    "User": [
+        {"id": "1", "name": "aa"},
+        {"id": "2", "name" : "ab"},
+        {"id": "3", "name" : "ac"}
+    ]
+}
