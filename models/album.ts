@@ -1,6 +1,7 @@
 import { UserSchema } from "./user";
 import { PhotoSchema } from "./photo";
-import api from '../api'
+import api from '../api';
+import { BaseModel } from "../core/BaseModel";
 
 export interface AlbumSchema {
   userId: number
@@ -8,7 +9,9 @@ export interface AlbumSchema {
   title: string
 }
 
-export class Album implements AlbumSchema {
+export class Album extends BaseModel<AlbumSchema> implements AlbumSchema {
+  basePath = 'albums';
+
   userId: number
   id: number
   title: string
@@ -17,6 +20,7 @@ export class Album implements AlbumSchema {
   photos: PhotoSchema[] = []
 
   constructor(albumData: AlbumSchema) {
+    super(['user', 'photos']);
     Object.assign(this, albumData)
   }
 
