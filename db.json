@@ -1,17 +1,17 @@
 {
-    "Album": [
+    "Albums": [
 
         { "id":1 , "name" : "aa"},
         {"id": 2 , "name": "bb"},
         { "id":3 , "name" : "aa"},
         {"id": 4 , "name": "bb"}
     ],
-    "Photo": [
+    "Photos": [
         {"id": "1", "name": "aa"},
         {"id": "2", "name" : "ab"},
         {"id": "3", "name" : "ac"}
     ],
-    "User": [
+    "Users": [
         {"id": "1", "name": "aa"},
         {"id": "2", "name" : "ab"},
         {"id": "3", "name" : "ac"}
