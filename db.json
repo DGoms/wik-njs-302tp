@@ -1,19 +1,53 @@
 {
-    "Albums": [
-
-        { "id":1 , "name" : "aa"},
-        {"id": 2 , "name": "bb"},
-        { "id":3 , "name" : "aa"},
-        {"id": 4 , "name": "bb"}
-    ],
-    "Photos": [
-        {"id": "1", "name": "aa"},
-        {"id": "2", "name" : "ab"},
-        {"id": "3", "name" : "ac"}
-    ],
-    "Users": [
-        {"id": "1", "name": "aa"},
-        {"id": "2", "name" : "ab"},
-        {"id": "3", "name" : "ac"}
-    ]
+  "Albums": [
+    {
+      "id": 1,
+      "name": "aa",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "bb",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "aa",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "name": "bb",
+      "userId": 3
+    }
+  ],
+  "Photos": [
+    {
+      "id": "1",
+      "name": "aa",
+      "albumId": 1
+    },
+    {
+      "id": "2",
+      "name": "ab"
+    },
+    {
+      "id": "3",
+      "name": "ac"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "name": "aa"
+    },
+    {
+      "id": "2",
+      "name": "ab"
+    },
+    {
+      "id": "3",
+      "name": "ac"
+    }
+  ]
 }

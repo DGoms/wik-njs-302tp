@@ -9,9 +9,8 @@ export interface AlbumSchema {
     title: string
 }
 
-export class Album extends BaseModel<AlbumSchema> implements AlbumSchema {
+export class Album extends BaseModel implements AlbumSchema {
     protected static basePath: string = 'albums';
-    protected static availableIncludes: string[] = ['user', 'photos'];
 
     userId: number
     id: number
@@ -23,24 +22,25 @@ export class Album extends BaseModel<AlbumSchema> implements AlbumSchema {
     constructor(albumData: AlbumSchema) {
         super(albumData);
     }
-
-    // async loadIncludes(includes: string[]): Promise<void> {
-    //     await Promise.all(includes.map(async (include) => {
-    //         switch (include) {
-    //             case 'user':
-    //                 const { data: userData } = await api.get<UserSchema>(`users/${this.userId}`)
-    //                 this.user = userData
-    //                 break
-    //             case 'photos':
-    //                 const { data: photoData } = await api.get<PhotoSchema[]>(`photos?albumId=${this.id}`)
-    //                 this.photos = photoData
-    //                 break
-    //         }
-    //     }))
-    // }
-
-    toString() {
-        return JSON.stringify(this)
+    
+    /**
+     * 
+     * @param includes 
+     * @override
+     */
+    async loadIncludes(includes: string[]): Promise<void> {
+        await Promise.all(includes.map(async (include) => {
+            switch (include) {
+                case 'user':
+                    const { data: userData } = await api.get<UserSchema>(`users/${this.userId}`)
+                    this.user = userData
+                    break
+                case 'photos':
+                    const { data: photoData } = await api.get<PhotoSchema[]>(`photos?albumId=${this.id}`)
+                    this.photos = photoData
+                    break
+            }
+        }))
     }
 }
 
